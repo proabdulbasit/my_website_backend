@@ -1,8 +1,13 @@
 const mongoose = require("mongoose");
-mongoose.connect(
-  "mongodb+srv://basit:pakistan@cluster0.kdvub78.mongodb.net/?retryWrites=true&w=majority"
-);
-// mongoose.connect(
-//   "mongodb+srv://basit:pakistan@cluster0.kdvub78.mongodb.net/test"
-// );
-// mongoose.connect("mongodb://localhost:27017/e-commerce");
+
+mongoose
+  .connect("mongodb+srv://proabdulbasit:pakistan@cluster0.rqtw4ix.mongodb.net/", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("MongoDB connected");
+  })
+  .catch((err) => {
+    console.error("Error connecting to MongoDB:", err);
+  });
